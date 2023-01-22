@@ -1,8 +1,19 @@
+## my dwm
+
+Fork from: https://git.suckless.org/dwm
+
+add some patches:
+
+```shell
+$ patch < patches/dwm-viewontag-20210312-61bb8b2.diff
+$ patch < patches/dwm-scratchpad-20221102-ba56fe9.diff
+```
+
+## README
+
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
-
-**Fork from: https://git.suckless.org/dwm**
 
 Requirements
 ------------
