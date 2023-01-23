@@ -7,6 +7,7 @@ add some patches:
 ```shell
 $ patch < patches/dwm-viewontag-20210312-61bb8b2.diff
 $ patch < patches/dwm-scratchpad-20221102-ba56fe9.diff
+$ patch < patches/dwm-alpha-20201019-61bb8b2.diff
 ```
 
 ## README
