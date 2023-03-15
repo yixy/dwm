@@ -70,6 +70,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *slockcmd[] = { "slock", NULL };
+//static const char *lightup[] = { "~/.scripts/lightup.sh", NULL };
+//static const char *lightdown[] = { "~/.scripts/lightdown.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,6 +110,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,                       XK_Escape,    spawn,          {.v = slockcmd} },
+	{ MODKEY,                       XK_F1,    spawn,          SHCMD("~/.scripts/lightdown.sh") },
+	{ MODKEY,                       XK_F2,    spawn,          SHCMD("~/.scripts/lightup.sh") },
 };
 
 /* button definitions */
