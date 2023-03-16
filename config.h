@@ -6,7 +6,10 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Noto Sans Mono:size=8" };
+//static const char *fonts[]          = { "Noto Sans Mono:size=8" };
+static const char *fonts[]          = { "Noto Sans Mono:size=8",
+                "WenQuanYi Micro Hei:size=12:type=Regular:antialias=true:autohint=true",
+                "Symbols Nerd Font:pixelsize=32:type=2048-em:antialias=true:autohint=true"};
 static const char dmenufont[]       = "Noto Sans Mono:size=8";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -27,7 +30,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1 ", "2 ", "3 ", "4 ", "5 󰘅", "6 ", "7 ", "8 ", "9 " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -109,9 +112,17 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_Escape,    spawn,          {.v = slockcmd} },
-	{ MODKEY,                       XK_F1,    spawn,          SHCMD("~/.scripts/lightdown.sh") },
-	{ MODKEY,                       XK_F2,    spawn,          SHCMD("~/.scripts/lightup.sh") },
+	{ MODKEY,                       XK_Escape, spawn,          {.v = slockcmd} },
+  /* backlight setting */
+	{ 0,                            XK_F1,     spawn,          SHCMD("~/.scripts/lightdown.sh") },
+	{ 0,                            XK_F2,     spawn,          SHCMD("~/.scripts/lightup.sh") },
+  /* klelee's volume config */
+  { 0,                            XK_F10,    spawn,          SHCMD("amixer sset Master toggle") },
+  { 0,                            XK_F11,    spawn,          SHCMD("amixer sset Master 5%- ") },
+  { 0,                            XK_F12,    spawn,          SHCMD("amixer sset Master 5%+ ") },
+  /* 截屏  需要安装flameshot */
+  { 0,                            XK_F3,     spawn,          SHCMD("flameshot gui") },
+
 };
 
 /* button definitions */
