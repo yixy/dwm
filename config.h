@@ -121,6 +121,7 @@ static const Key keys[] = {
   { 0,                            XK_F12,    spawn,          SHCMD("amixer sset Master 5%+ ") },
   /* 截屏  需要安装flameshot */
   { 0,                            XK_F3,     spawn,          SHCMD("flameshot gui") },
+  { 0,                            XK_F4,     spawn,          SHCMD("flameshot gui --raw | xclip -sel clip -t image/png") },
 
 };
 
